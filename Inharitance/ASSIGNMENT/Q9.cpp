@@ -15,7 +15,7 @@ class EMPLOYEE
 			cout<<"Enter age of employee : ";
 			cin>>age;
 			cout<<"Enter Designation of employee : ";
-			cin>>(Designation);
+			cin>>Designation;
 		}
 };
 class Salary : virtual public EMPLOYEE
@@ -32,7 +32,7 @@ class Salary : virtual public EMPLOYEE
 class Allowance : virtual public EMPLOYEE
 {
 	public:
-		int TA,DA,HRA,PF;
+		int TA,DA,HRA,PF,Bonus;
 		
 		void Ainput()
 		{
@@ -44,6 +44,7 @@ class Allowance : virtual public EMPLOYEE
 			cin>>HRA;
 			cout<<"Enter PF in (%) of Basic_salary : ";
 			cin>>PF;
+			Bonus=15;
 		}
 };
 class Salary_Account :  public Salary ,  public Allowance
@@ -75,8 +76,12 @@ class Salary_Account :  public Salary ,  public Allowance
 			cout<<endl<<"PF ("<<PF<<"%)     = ";
 			PF=(Basic_salary*PF)/100;
 			cout<<PF;
+
+			cout<<endl<<"Bonus ("<<Bonus<<"%)  = ";
+			Bonus=(Basic_salary*Bonus)/100;
+			cout<<Bonus;
 			
-			Net_salary=Basic_salary+DA+TA+HRA-PF;
+			Net_salary=Basic_salary+DA+TA+HRA-PF+Bonus;
 			cout<<endl<<"Net_salary  = "<<Net_salary;
 		}
 };
