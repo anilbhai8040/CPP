@@ -15,7 +15,7 @@ class Employee
 			cout<<"Enter age of employee : ";
 			cin>>age;
 			cout<<"Enter Designation of employee : ";
-			cin>>(Designation);
+			cin>>Designation;
 		}
 };
 class Clerk : virtual public Employee
